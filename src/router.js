@@ -21,7 +21,12 @@ const routes = [
     name: 'Account',
     component: loadPage('AccountPage'),
     beforeEnter: authGuard
-  }
+  },
+  {
+    path: '/ActiveArtwork/:artworkId',
+    name: 'Active Artwork',
+    component: loadPage('MovieDetailsPage')
+  },
 ]
 
 export const router = createRouter({

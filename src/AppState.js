@@ -10,5 +10,13 @@ export const AppState = reactive({
 
 
   /** @type {Artwork[]} user info from the database*/
-  artworks: []
+  artworks: [],
+
+  currentPage: 1,
+
+  totalPages: null,
+
+  searchingFor: null,
+  /** @type {Artwork} user info from the database*/
+  activeArtwork: null,
 })

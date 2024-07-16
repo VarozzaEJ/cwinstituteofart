@@ -24,20 +24,32 @@ async function discoverArtwork() {
 </script>
 
 <template>
-  <div class="row">
-    <div v-for="artwork in artworks" :key="artwork.originalLink" class="col-3">
-      <div class="card selectable">
-        <img class="card-img img-fluid" :src="`${artwork.imgUrl.regular}`" alt="">
-        <div class="card-body">
-          <p class="fs-4 card-title text-center fw-bold text-primary">{{ artwork.description.slice(0, 35) }}</p>
-          <p class="text-end fw-bold m-0">
 
-          </p>
+  <div class="container">
+    <DiscoverButtons />
+  </div>
+  <div class="container-fluid">
 
-        </div>
+    <div class="row">
+      <div v-for="artwork in artworks" :key="artwork.originalLink" :artwork="artwork" class="col-4 my-2">
+        <ArtworkCard :artwork="artwork" />
+        <!-- <div class="card selectable">
+          <img class="card-img img-fluid" :src="`${artwork.imgUrl.regular}`" alt="">
+          <div class="card-body">
+            <p class="fs-4 card-title text-center fw-bold text-primary">{{ artwork.description.slice(0, 35) }}</p>
+            <p class="text-end fw-bold m-0">
+              
+            </p>
+            
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
+  <div class="container">
+    <DiscoverButtons />
+  </div>
+
 </template>
 
 <style scoped lang="scss">
