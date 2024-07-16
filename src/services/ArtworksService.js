@@ -4,6 +4,9 @@ import { Artwork } from "../models/Artwork.js"
 
 
 class ArtworksService {
+  setActiveArtwork(artworkId) {
+    console.log("IS THIS WORKING????");
+  }
   async discoverArtwork() {
     const response = await api.get('https://sandbox.codeworksacademy.com/api/artworks')
     const artwork = response.data.artworks.map(artworkData => new Artwork(artworkData))

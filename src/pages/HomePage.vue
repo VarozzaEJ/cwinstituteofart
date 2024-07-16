@@ -21,6 +21,8 @@ async function discoverArtwork() {
   }
 }
 
+
+
 </script>
 
 <template>

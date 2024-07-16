@@ -25,7 +25,7 @@ const routes = [
   {
     path: '/ActiveArtwork/:artworkId',
     name: 'Active Artwork',
-    component: loadPage('MovieDetailsPage')
+    component: loadPage('ActiveArtworkPage')
   },
 ]
 

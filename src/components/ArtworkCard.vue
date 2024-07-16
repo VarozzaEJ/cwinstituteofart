@@ -16,12 +16,21 @@ async function admireArt(artworkId) {
         Pop.error(error);
     }
 }
+
+async function setActiveArtwork(artworkId) {
+    try {
+        await artworksService.setActiveArtwork(artworkId)
+    }
+    catch (error) {
+        Pop.error(error);
+    }
+}
 </script>
 
 
 <template>
     <!-- <RouterLink :to="{ name: 'Artwork Details', params: { artworkDescription: artwork.description } }"> -->
-    <div @click="admireArt(artwork.id)">
+    <div @click="admireArt(artwork.id), setActiveArtwork(artwork.id)">
         <div class="card selectable">
             <img class="card-img img-fluid" :src="`${artwork.imgUrl.regular}`" alt="">
         </div>

@@ -11,13 +11,16 @@ defineProps({ artwork: Artwork })
 
 
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <img class="card-img img-fluid" :src="`${artwork.imgUrl.raw}`" alt="">
+    <RouterLink :to="{ name: 'Active Artwork', params: { artworkId: artwork.id } }">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <img class="card-img img-fluid" :src="`${artwork.imgUrl.raw}`" alt="">
+                </div>
             </div>
         </div>
-    </div>
+    </RouterLink>
 </template>
 
 
