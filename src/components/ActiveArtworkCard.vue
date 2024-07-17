@@ -1,26 +1,35 @@
 <script setup>
-import { RouterLink } from 'vue-router';
 import { Artwork } from '../models/Artwork.js';
 import Pop from '../utils/Pop.js';
 import { artworksService } from '../services/ArtworksService.js';
+import { AppState } from '../AppState.js';
+import { computed, onMounted } from 'vue';
 
 
-defineProps({ artwork: Artwork })
+defineProps({ artworkProp: { type: Artwork } })
+const artworks = computed(() => AppState.artworks)
+const activeArtwork = computed(() => AppState.activeArtwork)
+
+
+
+
+
 
 </script>
 
 
 <template>
-    <RouterLink :to="{ name: 'Active Artwork', params: { artworkId: artwork.id } }">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <img class="card-img img-fluid" :src="`${artwork.imgUrl.raw}`" alt="">
-                </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <img class="card-img img-fluid" :src="artworkProp.imgUrl" alt="">
+                <h1>{{ artworkProp.description }}</h1>
             </div>
         </div>
-    </RouterLink>
+    </div>
+
 </template>
 
 

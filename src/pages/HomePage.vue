@@ -33,7 +33,7 @@ async function discoverArtwork() {
   <div class="container-fluid">
 
     <div class="row">
-      <div v-for="artwork in artworks" :key="artwork.originalLink" :artwork="artwork" class="col-4 my-2">
+      <div v-for="artwork in artworks" :key="artwork.originalLink" class="col-4 my-2">
         <ArtworkCard :artwork="artwork" />
         <!-- <div class="card selectable">
           <img class="card-img img-fluid" :src="`${artwork.imgUrl.regular}`" alt="">

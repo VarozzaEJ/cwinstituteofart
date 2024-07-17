@@ -29,10 +29,12 @@ async function setActiveArtwork(artworkId) {
 
 
 <template>
-    <!-- <RouterLink :to="{ name: 'Artwork Details', params: { artworkDescription: artwork.description } }"> -->
-    <div @click="admireArt(artwork.id), setActiveArtwork(artwork.id)">
-        <div class="card selectable">
-            <img class="card-img img-fluid" :src="`${artwork.imgUrl.regular}`" alt="">
+    <!-- <RouterLink :to="{ name: 'Active Artwork', params: { artworkId: artwork.id } }"> -->
+    <div :artwork="artwork">
+        <div @click="admireArt(artwork.id), setActiveArtwork(artwork.id)">
+            <div class="card selectable">
+                <img class="card-img img-fluid" :src="`${artwork.imgUrl.regular}`" alt="">
+            </div>
         </div>
     </div>
     <!-- </RouterLink> -->
